@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start"
   },
   "dependencies": {
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^4.2.0",
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/node": "^14.0.14",
