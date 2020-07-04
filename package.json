@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && tsc --project tsconfig.server.json",
-    "start": "next start"
+    "predev": "npm run build:server",
+    "dev": "node ./dist/src/server.js",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build": "next build && tsc -p tsconfig.server.json",
+    "start": "node ./dist/src/server.js"
   },
   "dependencies": {
     "next": "9.4.4",
@@ -16,8 +18,10 @@
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.4",
     "@types/node": "^14.0.14",
     "@types/react": "^16.9.41",
+    "nodemon": "^2.0.4",
     "typescript": "^3.9.5"
   }
 }
